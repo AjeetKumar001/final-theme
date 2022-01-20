@@ -204,4 +204,78 @@
     loop: true,
     items: 1,
   });
+
+  //iziModal Login
+  $("#modal-custom").iziModal({
+    closeOnEscape: true,
+    closeButton: true,
+    overlay: true,
+    overlayClose: false,
+  });
+
+  //Disable
+  // document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+  // document.onkeydown = function (e) {
+  //   // disable F12 key
+  //   if (e.keyCode == 123) {
+  //     return false;
+  //   }
+
+  //   // disable I key
+  //   if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+  //     return false;
+  //   }
+
+  //   // disable J key
+  //   if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+  //     return false;
+  //   }
+
+  //   // disable U key
+  //   if (e.ctrlKey && e.keyCode == 85) {
+  //     return false;
+  //   }
+  // };
+  /* Instantiating iziModal */
+  $("#modal-custom").iziModal({
+    overlayClose: false,
+    overlayColor: "rgba(0, 0, 0, 0.6)",
+  });
+
+  $("#modal-custom").on("click", "header a", function (event) {
+    event.preventDefault();
+    var index = $(this).index();
+    $(this).addClass("active").siblings("a").removeClass("active");
+    $(this)
+      .parents("div")
+      .find("section")
+      .eq(index)
+      .removeClass("hide")
+      .siblings("section")
+      .addClass("hide");
+
+    if ($(this).index() === 0) {
+      $("#modal-custom .iziModal-content .icon-close").css(
+        "background",
+        "#ddd"
+      );
+    } else {
+      $("#modal-custom .iziModal-content .icon-close").attr("style", "");
+    }
+  });
+
+  $("#modal-custom").on("click", ".submit", function (event) {
+    event.preventDefault();
+
+    var fx = "wobble", //wobble shake
+      $modal = $(this).closest(".iziModal");
+
+    if (!$modal.hasClass(fx)) {
+      $modal.addClass(fx);
+      setTimeout(function () {
+        $modal.removeClass(fx);
+      }, 1500);
+    }
+  });
 })(jQuery);
