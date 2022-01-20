@@ -1699,7 +1699,7 @@ section {
 }
 
 #modal-custom .iziModal-content .icon-close{
-    background: #FFF;
+    background: #009cea;
     margin-bottom: 10px;
     position: absolute;
     right: -8px;
@@ -1710,11 +1710,11 @@ section {
     width: 30px;
     height: 30px;
     border: 0;
-    color: #a9a9a9;
+    color: #fff;
     cursor: pointer;
 }
 #modal-custom .iziModal-content .icon-close:hover, #modal-custom .iziModal-content .icon-close:focus{
-  color: black;
+  color: #fff;
 }
 
 @-webkit-keyframes wobble {

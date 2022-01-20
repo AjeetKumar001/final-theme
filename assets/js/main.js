@@ -258,7 +258,7 @@
     if ($(this).index() === 0) {
       $("#modal-custom .iziModal-content .icon-close").css(
         "background",
-        "#ddd"
+        "#009cea"
       );
     } else {
       $("#modal-custom .iziModal-content .icon-close").attr("style", "");

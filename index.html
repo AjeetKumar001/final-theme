@@ -181,7 +181,7 @@
                 <li>Pharetra massa</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Apply Now</a>
+                <a href="#" class="btn-buy trigger" data-izimodal-open="#modal-custom" data-izimodal-transitionin="fadeInDown">Apply Now</a>
               </div>
             </div>
           </div>
@@ -197,7 +197,7 @@
                 <li>Pharetra massa</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Apply Now</a>
+                <a href="#" class="btn-buy trigger" data-izimodal-open="#modal-custom" data-izimodal-transitionin="fadeInDown">Apply Now</a>
               </div>
             </div>
           </div>
@@ -410,11 +410,11 @@
   <a href="#" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
 
 <!--Login Modals -->
-<div id="modal-custom" data-iziModal-group="grupo1">
-  <button data-iziModal-close class="icon-close">x</button>
+<div id="modal-custom" data-iziModal-group="grupo1" class="overflow-hidden">
+  <!-- <button data-iziModal-close class="icon-close">x</button> -->
   <header>
-      <a href="" class="active" id="signin">Sign in</a>
-      <a href="" >New Account</a>
+      <a href="" id="signin">Sign in</a>
+      <a href="" class="active">New Account</a>
   </header>
   <section class="hide">
       <input type="text" placeholder="Username">
@@ -425,8 +425,12 @@
       </footer>
   </section>
   <section>
-      <input type="text" placeholder="Email">
+      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="Last Name">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Phone">
       <input type="password" placeholder="Password">
+      <input type="password" placeholder="Confirm Password">
       <label for="check"><input type="checkbox" name="checkbox" id="check" value="1"> I agree to the <u>Terms</u>.</label>
       <footer>
           <button data-iziModal-close>Cancel</button>
