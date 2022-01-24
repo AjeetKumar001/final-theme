@@ -214,7 +214,7 @@
   });
 
   //Disable
-  document.addEventListener("contextmenu", (event) => event.preventDefault());
+  //document.addEventListener("contextmenu", (event) => event.preventDefault());
 
   document.onkeydown = function (e) {
     // disable F12 key
@@ -278,4 +278,9 @@
       }, 1500);
     }
   });
+
+  // $(document).ready(function () {
+  //   $("select:not(.ignore)").niceSelect();
+  //   FastClick.attach(document.body);
+  // });
 })(jQuery);

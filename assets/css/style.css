@@ -569,6 +569,12 @@ section {
 	background: url("../img/process-line.png") no-repeat scroll 0 0/cover;
 }
 
+
+@media (max-width:992px){
+  .process-step:after{
+    right:-55%;
+  }
+}
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -1054,6 +1060,15 @@ section {
   overflow: hidden;
   border: 2px solid #e9ecee;
   transition:all 0.3s ease-in-out 0s;
+}
+
+.pricing .box i {
+  font-size: 50px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.pricing .box:hover i{
+  color: #009cea;
 }
 
 .pricing h3 {
@@ -1798,4 +1813,19 @@ section {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+/************************************ Registration *************************************************/
+.reg__section .type_file{
+  background: transparent;
+  border: 0;
+}
+.reg__section .nav-link.active{
+  border-color: #e9ecef #e9ecef #dee2e6;
+}
+.reg__section .nav-link i{
+color:red;
+}
+.reg__section .nav-link.active i{
+ color: #009cea;
 }
