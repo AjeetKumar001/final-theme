@@ -38,12 +38,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about-us.html">About Us</a>
           </li>
-          <li class="drop-down"><a href="#">Registration</a>
-            <ul>
-              <li class="active"><a href="#">Reg 1</a></li>
-              <li><a href="#">Reg 2</a></li>
-            </ul>
-          </li>
+          <li><a href="registration.html">Registration</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact-us.html">Contact Us</a></li>
 
@@ -78,585 +73,153 @@
     </div>
 
   </section>
-  <!-- <section class="page-title bg-1">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="block text-center">
-            <span class="text-white">News details</span>
-            <h1 class="text-capitalize my-3 text-lg text-white">About Us</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= Registration Section ======= -->
-    <section class="solProp-section section-bg reg__section">
+    <section class="pricing section-bg">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                        <div class="form-container border p-3">
-                            <form method="post" id="register_form">
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item"> <a class="nav-link active_tab1 active" id="pricing_detail"><i class="icofont-dollar"></i> Pricing</a> </li>
-                                    <li class="nav-item"> <a class="nav-link inactive_tab1" id="business_detail"><i class="icofont-binary"></i> Business Details</a> </li>
-                                    <li class="nav-item"> <a class="nav-link inactive_tab1" id="mailing_detail"><i class="icofont-email"></i> Mailing Address</a> </li>
-                                    <li class="nav-item"> <a class="nav-link inactive_tab1" id="business_owner_detail"><i class="icofont-user-alt-1"></i> Business Owner Detail</a> </li>
-                                    <li class="nav-item"> <a class="nav-link inactive_tab1" id="additional_detail"><i class="icofont-attachment"></i> Optional and Additional Information</a> </li>
-                                </ul>
-                                <div class="tab-content py-4">
-                                    <div class="tab-pane active" id="pricing_detail_data">
-                                        <div class="panel panel-default">
-                                            <h4 class="panel-heading">Pricing</h4>
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                                    <input type="hidden" name="userId" value="{{session('id')}}">
-                                                    <input type="hidden" name="userEmail" value="{{session('email')}}">
-                                                    <input type="hidden" name="userreg_type" value="{{session('userreg_type')}}">
-                                                    <input type="hidden" name="userprovince_name" value="{{session('userprovince_name')}}">
-                                                    <div class="form-group col-lg-5 col-md-12">
-                                                        <label class="font">Is it New Registration or Renewal?&nbsp;<span class="text-danger">*</span></label>
-                                                    </div>
-                                                    <div class="form-group col-lg-3 col-md-12">
-                                                        <input type="radio" class="radio-btn" id="newReg" value="New Registration" name="newReg_renewal">&nbsp
-                                                        <label>New Registration</label>
-                                                        <br/><span id="error_newReg_renewal" class="text-danger"></span> </div>
-                                                    <div class="form-group col-lg-2 col-md-12">
-                                                        <input type="radio" class="radio-btn" name="newReg_renewal" value="Renewal" id="renewal">&nbsp
-                                                        <label>Renewal</label>
-                                                        <!--<div id="error_newReg_renewal" class="text-danger"></div>--></div>
-                                                    <div class="form-group col-lg-2 col-md-12">
-                                                            <label>Price($)</label>
-                                                        <input type="text" name="newReg_renewal_cost" value="60" class="form-control prc" readonly> </div>
-                                                    <div style="display: none" id="business_li_cont">
-                                                        <div class="form-group col-lg-12">
-                                                            <label>Please upload unexpired Master Business Licence&nbsp;<span class="text-danger">*</span></label>
-                                                        </div>
-                                                        <div class="form-group col-lg-12">
-                                                            <input type="file" name="business_licence" class="form-control type_file pl-0" accept=".pdf">
-                                                            <div id="error_business_licence" class="text-danger"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-lg-10 col-md-12">
-                                                        <label>Our Fee</label>
-                                                    </div>
-                                                    <div class="form-group col-lg-2 col-md-12">
-                                                        <input type="text" name="business_fee" id="business_fee" value="60" class="form-control prc" readonly> </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="form-group col-md-12">
-                                                        <h5 class="navy opt-heading">Optional</h5> </div>
-                                                    <div class="form-group col-lg-6 col-md-12">
-                                                        <label>Do you want Nuans Report for your proposed name?</label>
-                                                    </div>
-                                                    <div class="form-group col-lg-1 col-md-6 col-sm-6">
-                                                        <input type="radio" id="nuans_report_yes" name="nuans_report" value="Yes">&nbsp
-                                                        <label>Yes</label>
-                                                    </div>
-                                                    <!--{{$userdata->nuans_report ?? 'Yes'}}-->
-                                                    <div class="form-group col-lg-3 col-md-6 col-sm-6">
-                                                        <input type="radio" id="nuans_report_no" name="nuans_report" checked value="No">&nbsp
-                                                        <label>No</label>
-                                                    </div>
-                                                    <div class="form-group col-lg-2 col-md-12">
-                                                        <input type="text" name="nuans_report_cost" id="nuans_report_cost" class="form-control prc" readonly> </div>
-                                                    <div class="form-group col-lg-6 col-md-12">
-                                                        <label>Do you want GST/HST Registration?</label>
-                                                    </div>
-                                                    <div class="form-group col-lg-1 col-md-12">
-                                                        <input type="radio" id="gst_hst_reg_yes" name="gst_hst_reg" value="Yes">&nbsp
-                                                        <label>Yes</label>
-                                                    </div>
-                                                    <div class="form-group col-lg-3 col-md-12">
-                                                        <input type="radio" id="gst_hst_reg_no" name="gst_hst_reg" checked value="No">&nbsp
-                                                        <label>No</label>
-                                                    </div>
-                                                    <div class="form-group col-lg-2 col-md-5">
-                                                        <input type="text" name="gst_hst_reg_cost" id="gst_hst_reg_cost" class="form-control prc" placeholder="" readonly> </div>
-                                                    <div class="form-group col-md-6 col-sm-5 col-xs-12">
-                                                        <label>Do you want Payroll Registration?</label>
-                                                    </div>
-                                                    <div class="form-group col-md-1 col-sm-5 col-xs-12">
-                                                        <input type="radio" id="payroll_reg_yes" name="payroll_reg" value="Yes">&nbsp
-                                                        <label>Yes</label>
-                                                    </div>
-                                                    <div class="form-group col-md-3 col-sm-5 col-xs-12">
-                                                        <input type="radio" id="payroll_reg_no" name="payroll_reg" checked value="No">&nbsp
-                                                        <label>No</label>
-                                                    </div>
-                                                    <div class="form-group col-md-2 col-sm-5 col-xs-12">
-                                                        <input type="text" name="payroll_reg_cost" id="payroll_reg_cost" class="form-control prc" readonly> </div>
-                                                    <div class="form-group col-md-6 col-sm-5 col-xs-12">
-                                                        <label>Do you want Import/Export Registration?</label>
-                                                    </div>
-                                                    <div class="form-group col-md-1 col-sm-5 col-xs-12">
-                                                        <input type="radio" id="importExport_reg_yes" name="importExport_reg" value="Yes">&nbsp
-                                                        <label>Yes</label>
-                                                    </div>
-                                                    <div class="form-group col-md-3 col-sm-5 col-xs-12">
-                                                        <input type="radio" id="importExport_reg_no" name="importExport_reg" checked value="No">&nbsp
-                                                        <label>No</label>
-                                                    </div>
-                                                    <div class="form-group col-md-2 col-sm-5 col-xs-12">
-                                                        <input type="text" name="importExport_reg_cost" id="importExport_reg_cost" class="form-control prc" readonly> </div>
-                                                    <div class="form-group col-md-6 col-sm-5 col-xs-12">
-                                                        <label>Delivery</label>
-                                                    </div>
-                                                    <div class="form-group col-md-4 col-sm-5 col-xs-12">
-                                                        <div>
-                                                            <select name="delivery" id="delivery" class="py-1 px-2">
-                                                                <option value="">Select Delivery</option>
-                                                                <option value="Free">Email- Free </option>
-                                                                <option value="canada post">Canada Post</option>
-                                                                <option value="courier">Courier</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-2 col-sm-5 col-xs-12">
-                                                        <input type="text" id="delivery_price" name="delivery_price" class="form-control prc" readonly> </div>
-                                                    <div class="form-group col-md-10 col-sm-5 col-xs-12">
-                                                        <label>Total CAD</label>
-                                                    </div>
-                                                    <div class="form-group col-md-2 col-sm-5 col-xs-12">
-                                                        <input type="text" class="form-control" name="total_cad" id="result" value="120" readonly> </div>
-                                                </div>
-                                                <div align="center">
-                                                    <button type="button" name="btn_pricing_detail_data" style="padding: 4px 35px; font-size: 1.15rem;" id="btn_pricing_detail_data" class="btn theme-button btn-lg">Next</button>
-                                                </div>
-                                                <br /> </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="business_detail_data" style="opacity: 1;">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <h5 class="navy py-4">Business Details</h5>
-                                                        <h6 class="small-note pb-4">We will do FREE check of your proposed business name with existing business names operating in Ontario</h6>
-                                                        <div class="row">
-                                                            <div class="clearfix"></div>
-                                                            <div class="form-group col-md-3 col-sm-5 col-xs-12">
-                                                                <label>Name -1&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-md-9 col-sm-5 col-xs-12">
-                                                                <input type="text" name="businessNameone" id="businessnameone" class="form-control" placeholder="Proposed business Name -1">
-                                                                <!--<div id="error_businessNameone" style="color:red"></div>--><span id="error_businessNameone" class="text-danger"></span> </div>
-                                                            <div class="form-group col-md-3 col-sm-5 col-xs-12">
-                                                                <label>Name -2 </label>
-                                                            </div>
-                                                            <div class="form-group col-md-9 col-sm-5 col-xs-12">
-                                                                <input type="text" name="businessNametwo" class="form-control" placeholder="Proposed business Name -2"> </div>
-                                                            <div class="form-group col-md-3 col-sm-5 col-xs-12">
-                                                                <label>Name -3 </label>
-                                                            </div>
-                                                            <div class="form-group col-md-9 col-sm-5 col-xs-12">
-                                                                <input type="text" name="businessNamethree" class="form-control" placeholder="Proposed business Name -3 "> </div>
-                                                            <div class="form-group col-md-3 col-sm-5 col-xs-12">
-                                                                <label>Buisness Activity</label>
-                                                            </div>
-                                                            <div class="form-group col-md-9 col-sm-5 col-xs-12">
-                                                                <textarea class="form-control" name="businessActivity" placeholder="Activity" rows="5.5"></textarea>
-                                                                <div id="error_businessActivity" class="text-danger"></div>
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                                                        <br> </div>
-                                                    <div class="col-lg-6">
-                                                        <h5 class="navy py-4">Business Address</h5>
-                                                        <div class="row">
-                                                            <div class="form-group col-lg-2 col-sm-5 col-xs-12">
-                                                                <label>Suite#</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-3 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_suite" id="business_suite" class="form-control" placeholder="Suite" maxlength="6"> </div>
-                                                            <div class="col-lg-2 col-sm-5 col-xs-12">
-                                                                <label>Street#&nbsp;</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_street" id="business_street" class="form-control" placeholder="Street" maxlength="6"> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Street Name&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_street_name" id="business_street_name" class="form-control" placeholder="Street Name">
-                                                                <!--<div id="error_business_street_name" style="color:red"></div>--><span id="error_business_street_name" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>City&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_city" id="business_city" class="form-control" placeholder="City"> <span id="error_business_city" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Province/State&nbsp;<i class="fa fa-lock" class="text-danger"></i></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_province_state" id="business_province_state" value="Ontario" class="form-control" placeholder="Province/State" readonly> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Postal code&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_postal_code" id="business_postal_code" class="form-control" placeholder="Postal code">
-                                                                <!--<div id="error_business_postal_code" style="color:red"></div>--><span id="error_business_postal_code" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Country&nbsp;<i class="fa fa-lock" class="text-danger"></i></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_country" id="business_country" value="Canada" class="form-control" placeholder="Country" readonly> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Phone&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_phone" id="business_phone" class="form-control" placeholder="Phone" onkeypress="return validateNumber(event)">
-                                                                <!--<div id="error_business_phone" style="color:red"></div>--><span id="error_business_phone" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Fax</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="business_fax" id="business_fax" class="form-control" placeholder="Fax"> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Email Id&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="email" name="business_email" id="business_email" class="form-control" placeholder="Email Id">
-                                                                <!--<div id="error_business_email" style="color:red"></div>--><span id="error_business_email" class="text-danger"></span> </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br />
-                                                <div align="center">
-                                                    <button type="button" style="padding: 4px 35px; font-size: 1.15rem;" name="previous_btn_business_detail_data" id="previous_btn_business_detail_data" class="btn btn-lg theme-button">Previous</button>
-                                                    <button type="button" style="padding: 4px 35px; font-size: 1.15rem;" name="btn_business_detail_data" id="btn_business_detail_data" class="btn btn-lg theme-button">Next</button>
-                                                </div>
-                                                <br /> </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="mailing_detail_data" style="opacity: 1;">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <h5 class="navy py-4">Mailing Address</h5>
-                                                        <div class="form-check pb-4">
-                                                            <input class="form-check-input" type="checkbox" name="mailaddress" id="mailaddress" value="checkold">
-                                                            <label class="form-check-label checkbox-note" for="defaultCheck1"> Same as Business address. </label>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="form-group col-lg-1 col-sm-5 col-xs-12">
-                                                                <label>Suite#</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-3 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_suite" id="mail_suite" class="form-control" placeholder="Suite" maxlength="6"> </div>
-                                                            <div class="col-lg-1 col-sm-5 col-xs-12">
-                                                                <label>Street#</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_street" id="mail_street" class="form-control" placeholder="Street" maxlength="6"> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Street Name&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_street_name" id="mail_street_name" class="form-control" placeholder="Street Name">
-                                                                <!--<div id="error_mail_street_name" style="color:red"></div>--><span id="error_mail_street_name" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>City&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_city" id="mail_city" class="form-control" placeholder="City">
-                                                                <!--<div id="error_mail_city" style="color:red"></div>--><span id="error_mail_city" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Province/State&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_province_state" id="mail_province_state" class="form-control" placeholder="Province/State">
-                                                                <!--<div id="error_mail_province_state" style="color:red"></div>--><span id="error_mail_province_state" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Postal code&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_postal_code" id="mail_postal_code" class="form-control" placeholder="Postal code">
-                                                                <!--<div id="error_mail_postal_code" style="color:red"></div>--><span id="error_mail_postal_code" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Country&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_country" id="mail_country" class="form-control" placeholder="Country">
-                                                                <!--<div id="error_mail_country" style="color:red"></div>--><span id="error_mail_country" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Phone&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_phone" id="mail_phone" class="form-control" placeholder="Phone" onkeypress="return validateNumber(event)">
-                                                                <!--<div id="error_mail_phone" style="color:red"></div>--><span id="error_mail_phone" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Fax</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="mail_fax" id="mail_fax" class="form-control" placeholder="Fax"> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Email Id&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="email" name="mail_email" id="mail_email" class="form-control" placeholder="Email Id">
-                                                                <!--<div id="error_mail_email" style="color:red"></div>--><span id="error_mail_email" class="text-danger"></span> </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br />
-                                                <div align="center">
-                                                    <button type="button" style="padding: 4px 35px; font-size: 1.15rem;" name="previous_btn_mailing_detail_data" id="previous_btn_mailing_detail_data" class="btn theme-button btn-lg">Previous</button>
-                                                    <button type="button" style="padding: 4px 35px; font-size: 1.15rem;" name="btn_mailing_detail_data" id="btn_mailing_detail_data" class="btn theme-button btn-lg">Next</button>
-                                                </div>
-                                                <br /> </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="business_owner_detail_data" style="opacity: 1;">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <h5 class="navy py-4">Business Owner</h5>
-                                                        <div class="row">
-                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
-                                                                <label>First Name&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_fname_one" id="owner_fname_one" class="form-control" placeholder="First Name">
-                                                                <!--<div id="error_owner_fname_one" style="color:red"></div>--><span id="error_owner_fname_one" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
-                                                                <label>Middle Name</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_mname_one" class="form-control" placeholder="Middle Name"> </div>
-                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
-                                                                <label>Last Name&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_lname_one" id="owner_lname_one" class="form-control" placeholder="Last Name">
-                                                                <!--<div id="error_owner_lname_one" style="color:red"></div>--><span id="error_owner_lname_one" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
-                                                                <label>Contact Number&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_contactno" id="owner_contactno" class="form-control" id="owner_contactno" placeholder="Contact Number" onkeypress="return validateNumber(event)">
-                                                                <!--<div id="error_cnumber_one" style="color:red"></div>--><span id="error_owner_contactno" class="text-danger"></span> </div>
-                                                            <div class="clearfix"></div>
-                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
-                                                                <label>Email Id&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
-                                                                <input type="email" name="owner_emailid" id="owner_emailid" class="form-control" id="owner_emailid" placeholder="Email Id">
-                                                                <!--<div id="error_email_one" style="color:red"></div>--><span id="error_owner_email" class="text-danger"></span> </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <h5 class="navy py-4">Owner Address</h5>
-                                                        <div class="form-check pb-4">
-                                                            <input class="form-check-input" type="checkbox" name="checkaddress" id="sameowneraddresscheckbox" value="checkold">
-                                                            <label class="form-check-label checkbox-note" for="defaultCheck1"> Same as Business address. </label>
-                                                        </div>
-                                                        <div class="row owner-address-padding">
-                                                            <div class="form-group col-lg-2 col-sm-5 col-xs-12">
-                                                                <label>Suite#</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-3 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_suite_one" id="suite" class="form-control" placeholder="Suite" maxlength="6"> </div>
-                                                            <div class="col-lg-2 col-sm-5 col-xs-12">
-                                                                <label>Street#&nbsp;</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_street_one" id="street" class="form-control" placeholder="Street" maxlength="6"> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Street Name&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_street_name_one" id="street_name" class="form-control" placeholder="Street Name">
-                                                                <!--<div id="error_owner_street_name_one" style="color:red"></div>--><span id="error_owner_street_name_one" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>City&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_city_one" id="city" class="form-control" placeholder="City">
-                                                                <!--<div id="error_owner_city_one" style="color:red"></div>--><span id="error_owner_city_one" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Province/State&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_province_state_one" id="province_state" class="form-control" placeholder="Province/State">
-                                                                <!--<div id="error_owner_province_state_one" style="color:red"></div>--><span id="error_owner_province_state_one" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Postal code&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_postal_code_one" id="postal_code" class="form-control" placeholder="Postal code">
-                                                                <!--<div id="error_owner_postal_code_one" style="color:red"></div>--><span id="error_owner_postal_code_one" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Country&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_country_one" id="country" class="form-control" placeholder="Country">
-                                                                <!--<div id="error_owner_country_one" style="color:red"></div>--><span id="error_owner_country_one" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Phone&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_phone" id="phone" class="form-control" placeholder="Phone" onkeypress="return validateNumber(event)">
-                                                                <!--<div id="error_owner_phone" style="color:red"></div>--><span id="error_owner_phone" class="text-danger"></span> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Fax</label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="owner_fax" id="fax" class="form-control" placeholder="Fax"> </div>
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Email Id&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="email" name="owner_email" id="email" class="form-control" placeholder="Email Id">
-                                                                <!--<div id="error_owner_email" style="color:red"></div>--><span id="error_owner_email" class="text-danger"></span> </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br />
-                                                <div align="center">
-                                                    <button type="button" style="padding: 4px 35px; font-size: 1.15rem;" name="previous_btn_business_owner__detail_data" id="previous_btn_business_owner__detail_data" class="btn theme-button btn-lg">Previous</button>
-                                                    <button type="button" style="padding: 4px 35px; font-size: 1.15rem;" name="btn_business_owner_detail_data" id="btn_business_owner_detail_data" class="btn theme-button btn-lg">Next</button>
-                                                </div>
-                                                <br /> </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="additional_detail_data" style="opacity: 1;">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">Optional and Additional Information</div>
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <!--<h5 class = "navy opt-heading" id="optional_tax_head" style="display: none;">Optional Tax Registration</h5>-->
-                                                    <div class="col-lg-6" id="gstHstCont" style="display: none;">
-                                                        <h5 class="navy py-4">GST/HST Registration</h5>
-                                                        <h6 class="small-note">Note: We will required SIN # and Date of Birth to Register GST/HST, our advisor will call you to get the details.</h6>
-                                                        <div class="row"> </div>
-                                                        <div class="row">
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Total Expected Sales in Canada&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="totalExpectedSalesInCanada" class="form-control" placeholder="Total Expected Sale" onkeypress="return CheckNumeric()" onkeyup="FormatCurrency(this)">
-                                                                <div id="error_totalExpectedSalesInCanada" class="text-danger"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
-                                                                <label>Total Sales Outside Canada&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
-                                                                <input type="text" name="totalSalesOutsideCanada" class="form-control" placeholder="Total Sale" onkeypress="return CheckNumeric()" onkeyup="FormatCurrency(this)">
-                                                                <div id="error_totalSalesOutsideCanada" class="text-danger"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6" id="payrollRegCont" style="display: none;">
-                                                        <h5 class="navy py-4">Payroll Registration</h5>
-                                                        <div class="row owner-address-padding">
-                                                            <div class="form-group col-md-7 col-sm-5 col-xs-12">
-                                                                <label>First Wage Date&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                                                                <input type="date" name="firstWage" class="form-control" placeholder="First Wage">
-                                                                <div id="error_firstWage" class="text-danger"></div>
-                                                            </div>
-                                                            <div class="form-group col-md-7 col-sm-5 col-xs-12">
-                                                                <label>Payroll Frequency&nbsp;<span class="text-danger">*</span> </label>
-                                                            </div>
-                                                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                                                                <!--<input type="text"  value="{{ $userdata->pFrequecy ?? '' }}"  placeholder="Payroll Frequency">-->
-                                                                <select name="pFrequecy" class="form-control">
-                                                                    <option value="daily">Daily</option>
-                                                                    <option value="weekly">Weekly</option>
-                                                                    <option value="bi-weekly">Bi-weekly</option>
-                                                                    <option value="monthly">Monthly</option>
-                                                                </select>
-                                                                <div id="error_pFrequecy" class="text-danger"></div>
-                                                            </div>
-                                                            <div class="form-group col-md-7 col-sm-5 col-xs-12">
-                                                                <label>Number of Employess&nbsp;<span class="text-danger">*</span> </label>
-                                                            </div>
-                                                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                                                                <input type="text" name="no_employee" class="form-control" placeholder="Number of Employess" onkeypress="return validateNumber(event)">
-                                                                <div id="error_no_employee" class="text-danger"></div>
-                                                            </div>
-                                                            <div class="form-group col-md-7 col-sm-5 col-xs-12">
-                                                                <label>Total Salary Expected&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                                                                <input type="text" name="totalSalaryExpected" class="form-control" placeholder="Salary Expected" onkeypress="return validateNumber(event)">
-                                                                <div id="error_totalSalaryExpected" class="text-danger"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6" id="importExport_reg_cont" style="display: none;">
-                                                        <h5 class="navy py-4">Import Export Registration</h5>
-                                                        <div class="row owner-address-padding">
-                                                            <div class="form-group col-md-7 col-sm-5 col-xs-12">
-                                                                <label>Types of Goods Exported&nbsp;<span class="text-danger">*</span></label>
-                                                            </div>
-                                                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                                                                <input type="text" name="typesOfgood" class="form-control" placeholder="Goods Exported">
-                                                                <div id="error_typesOfgood" class="text-danger"></div>
-                                                            </div>
-                                                            <div class="form-group col-md-7 col-sm-5 col-xs-12">
-                                                                <label>Estimated Annual Value of Goods Exported&nbsp;<span class="text-danger">*</span> </label>
-                                                            </div>
-                                                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                                                                <input type="text" name="EstimatedannualValue" class="form-control" placeholder="Annual Value of Goods Exported">
-                                                                <div id="error_EstimatedannualValue" class="text-danger"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <h5 class="navy py-4">Additional Information</h5>
-                                                        <div class="row owner-address-padding">
-                                                            <!--                                        <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                    <label>Additional Information</label>
-                    </div>-->
-                                                            <div class="form-group col-md-12 col-sm-5 col-xs-12">
-                                                                <textarea class="form-control" name="additional_info" placeholder="Additional Information" rows="5.5"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row" style="padding-top: 30px; padding-bottom: 30px;">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="checkaddress" id="sameowneraddresscheckboxx" value="checkold">
-                                                            <label class="form-check-label checkbox-note" for="defaultCheck1"> Lorem Ipsum is simply dummy text of the <a class="text-danger" href="<?php echo asset('/termsAndcondition'); ?>">Terms & Condition</a> and typesetting industry. </label>
-                                                            <div id="error_checkaddress" class="text-danger"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br />
-                                                <div class="row">
-                                                    <!--                            <div class="col-lg-12">
-                                <center><button type="submit" class="button" style="vertical-align:middle"><span>Submit </span></button></center>
-                                <center><input type="submit" class="button" style="vertical-align:middle" value="Submit"></center>
-                            </div>-->
-                                                    <div align="center">
-                                                        <button type="button" style="padding: 4px 35px; font-size: 1.15rem;" name="previous_btn_additional_detail_data" id="previous_btn_additional_detail_data" class="btn theme-button btn-lg">Previous</button>
-                                                        <button type="submit" class="btn theme-button btn-lg" style="vertical-align:middle; padding: 4px 35px; font-size: 1.15rem;"><span>Submit </span></button>
-                                                    </div>
-                                                </div>
-                                                <br /> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+            <div class="section-title" >
+                <h2>Choose your legal structure</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+              </div>
+      
+              <div class="row justify-content-center mb-3">
+      
+                <div class="col-lg-4 col-md-6 ">
+                  <div class="box">
+                    <i class="icofont-company"></i>
+                    <h3>Sole Proprietorship</br></h3>
+                    <h6>(One owner only)</h6>
+                    <!-- <h4><sup>$</sup>890</h4> -->
+                    <div class="mb-4">
+                      <select class="py-1 px-2">
+                        <option >Select Province</option>
+                        <option value="Ontario">Ontario</option>
+                      </select>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Donec interdum metus et</li>
+                        <li>Nec feugiat nisl</li>
+                        <li>Nulla at volutpat dola</li>
+                        <li>Pharetra massa</li>
+                      </ul>
+                    </div>
+                    <div class="btn-wrap">
+                      <a href="sole-proprietorship.html" class="btn-buy trigger" data-izimodal-open="#modal-custom" data-izimodal-transitionin="fadeInDown">Get Started</a>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-lg-1 col-sm-12"></div>
-            </div>
+      
+                <div class="col-lg-4 col-md-6">
+                  <div class="box">
+                    <i class="icofont-handshake-deal"></i>
+                    <h3>General Partnership</h3>
+                    <h6>(More than one owner)</h6>
+                    <!-- <h4><sup>$</sup>890</h4> -->
+                    <div class="mb-4">
+                      <select class="py-1 px-2">
+                        <option >Select Province</option>
+                        <option value="Ontario">Ontario</option>
+                      </select>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Donec interdum metus et</li>
+                        <li>Nec feugiat nisl</li>
+                        <li>Nulla at volutpat dola</li>
+                        <li>Pharetra massa</li>
+                      </ul>
+                    </div>
+                    <div class="btn-wrap">
+                      <a href="#" class="btn-buy trigger" data-izimodal-open="#modal-custom" data-izimodal-transitionin="fadeInDown">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+      
+              </div>
+      
+              <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 ">
+                  <div class="box">
+                    <i class="icofont-certificate-alt-1"></i>
+                    <h3>Nuans</h3>
+                    <h6></h6>
+                    <!-- <h4><sup>$</sup>890</h4> -->
+                    <div class="mb-4">
+                      <select class="py-1 px-2">
+                        <option >Select Province</option>
+                        <option value="Ontario">Ontario</option>
+                      </select>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Donec interdum metus et</li>
+                        <li>Nec feugiat nisl</li>
+                        <li>Nulla at volutpat dola</li>
+                        <li>Pharetra massa</li>
+                      </ul>
+                    </div>
+                    <div class="btn-wrap">
+                      <a href="nuans.html" class="btn-buy trigger" data-izimodal-open="#modal-custom" data-izimodal-transitionin="fadeInDown">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-lg-4 col-md-6 ">
+                  <div class="box">
+                    <i class="icofont-ebook"></i>
+                    <h3>Trade Name</h3>
+                    <h6></h6>
+                    <!-- <h4><sup>$</sup>890</h4> -->
+                    <div class="mb-4">
+                      <select class="py-1 px-2">
+                        <option >Select Province</option>
+                        <option value="Ontario">Ontario</option>
+                      </select>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Donec interdum metus et</li>
+                        <li>Nec feugiat nisl</li>
+                        <li>Nulla at volutpat dola</li>
+                        <li>Pharetra massa</li>
+                      </ul>
+                    </div>
+                    <div class="btn-wrap">
+                      <a href="tradename.html" class="btn-buy trigger" data-izimodal-open="#modal-custom" data-izimodal-transitionin="fadeInDown">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-lg-4 col-md-6 ">
+                  <div class="box">
+                    <i class="icofont-layers"></i>
+                    <h3>Incorporation</h3>
+                    <h6></h6>
+                    <!-- <h4><sup>$</sup>890</h4> -->
+                    <div class="mb-4">
+                      <select class="py-1 px-2">
+                        <option >Select Province</option>
+                        <option value="Ontario">Ontario</option>
+                      </select>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Donec interdum metus et</li>
+                        <li>Nec feugiat nisl</li>
+                        <li>Nulla at volutpat dola</li>
+                        <li>Pharetra massa</li>
+                      </ul>
+                    </div>
+                    <div class="btn-wrap">
+                      <a href="#" class="btn-buy trigger" data-izimodal-open="#modal-custom" data-izimodal-transitionin="fadeInDown">Get Started</a>
+                    </div>
+                  </div>
+                </div>
+      
+                </div>
         </div>
     </section>
 

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>FirstInc - Registration</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="index.html"><span>FirstInc</span></a></h1>
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a>
+          </li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" >
+          <div>
+            <h1>Nuans</h1>
+            <h2>Quisque id mi. Vestibulum ante ipsum primis in faucibus orci luctus et</h2>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="assets/img/nuans.svg" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <main id="main">
+
+    <!-- ======= Registration Section ======= -->
+    <section class="solProp-section section-bg reg__section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuans</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                  </div>
+            <div class="row">
+                <div class="col-lg-10 col-12 mx-auto">
+                        <div class="form-heading">
+                        <div class="form-container border p-3">
+                            <form method="post" id="register_form">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item"> <a class="nav-link active_tab1 active"  id="nuans_pricing_detail">Pricing</a> </li>
+                                    <li class="nav-item"> <a class="nav-link inactive_tab1" id="nuans_business_detail" >Business Details</a> </li>
+                                    <li class="nav-item"> <a class="nav-link inactive_tab1" id="nuans_business_owner_detail" >Business Owner Detail</a> </li>
+                                    <li class="nav-item"> <a class="nav-link inactive_tab1" id="additional_detail" >Optional and Additional Information</a> </li>
+                                </ul>
+                                <div class="tab-content py-4">
+                                    <div class="tab-pane active" id="nuans_pricing_detail_data">
+                                        <div class="panel panel-default">
+                                            <h4 class="panel-heading">Pricing</h4>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <input type="hidden" name="userId" value="{{$userdata->newReg_renewal ?? session('id')}}">
+                                                    <input type="hidden" name="userEmail" value="{{$userdata->newReg_renewal ?? session('email')}}">
+                                                    <input type="hidden" name="userreg_type" value="{{$userdata->newReg_renewal ?? session('userreg_type')}}">
+                                                    <input type="hidden" name="userprovince_name" value="{{$userdata->newReg_renewal ?? session('userprovince_name')}}">
+                                                    <div class="form-group col-md-5 col-sm-5 col-xs-12">
+                                                        <label class="font">Jurisdiction for which you need Nuans / Name Reservation&nbsp;<span class="text-danger">*</span>&nbsp;<i class="fa fa-lock" class="text-danger"></i></label>
+                                                    </div>
+                                                    <div class="form-group col-md-3 col-sm-5 col-xs-12">
+                                                        <input type="text" name="jurisdiction" value="Ontario" class="form-control prc" readonly> </div>
+                                                    <div class="form-group col-md-2 col-sm-5 col-xs-12"></div>
+                                                    <div class="form-group col-md-2 col-sm-5 col-xs-12">
+                                                        <input type="text" name="jurisdiction" value="25" class="form-control prc" readonly> </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-md-10 col-sm-5 col-xs-12">
+                                                        <label>Total CAD</label>
+                                                    </div>
+                                                    <div class="form-group col-md-2 col-sm-5 col-xs-12">
+                                                        <input type="text" class="form-control" name="total_cad" id="result" value="25" readonly> </div>
+                                                </div>
+                                                <div class="row justify-content-center">
+                                                    <button type="button" name="btn_nuans_pricing_detail_data" id="btn_nuans_pricing_detail_data" class="btn theme-button btn-lg">Next</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nuans_business_detail_data" style="opacity: 1;">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <h5 class="navy py-4">Business Details</h5>
+                                                        <h6 class="small-note pb-4">We will do FREE check of your proposed business name with existing business names operating in Ontario</h6>
+                                                        <div class="row">
+                                                            <div class="clearfix"></div>
+                                                            <div class="form-group col-md-3 col-sm-5 col-xs-12">
+                                                                <label>Name -1&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-md-9 col-sm-5 col-xs-12">
+                                                                <input type="text" name="businessNameone" id="businessnameone" class="form-control" placeholder="Proposed business Name -1">
+                                                                <!--<div id="error_businessNameone" class="text-danger"></div>--><span id="error_businessNameone" class="text-danger"></span> </div>
+                                                            <div class="form-group col-md-3 col-sm-5 col-xs-12">
+                                                                <label>Name -2 </label>
+                                                            </div>
+                                                            <div class="form-group col-md-9 col-sm-5 col-xs-12">
+                                                                <input type="text" name="businessNametwo" class="form-control" placeholder="Proposed business Name -2"> </div>
+                                                            <div class="form-group col-md-3 col-sm-5 col-xs-12">
+                                                                <label>Name -3 </label>
+                                                            </div>
+                                                            <div class="form-group col-md-9 col-sm-5 col-xs-12">
+                                                                <input type="text" name="businessNamethree" class="form-control" placeholder="Proposed business Name -3 "> </div>
+                                                            <div class="form-group col-md-3 col-sm-5 col-xs-12">
+                                                                <label>Buisness Activity</label>
+                                                            </div>
+                                                            <div class="form-group col-md-9 col-sm-5 col-xs-12">
+                                                                <textarea class="form-control" name="businessActivity" placeholder="Activity" rows="5.5"></textarea>
+                                                                <div id="error_businessActivity" class="text-danger"></div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <br> </div>
+                                                    <div class="col-lg-6">
+                                                        <h5 class="navy py-4">Business Address</h5>
+                                                        <div class="row">
+                                                            <div class="form-group col-lg-2 col-sm-5 col-xs-12">
+                                                                <label>Suite#</label>
+                                                            </div>
+                                                            <div class="form-group col-lg-3 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_suite" id="business_suite" class="form-control" placeholder="Suite" maxlength="6"> </div>
+                                                            <div class="col-lg-2 col-sm-5 col-xs-12">
+                                                                <label>Street#&nbsp;</label>
+                                                            </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_street" id="business_street" class="form-control" placeholder="Street" maxlength="6"> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Street Name&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_street_name" id="business_street_name" class="form-control" placeholder="Street Name">
+                                                                <!--<div id="error_business_street_name" class="text-danger"></div>--><span id="error_business_street_name" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>City&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_city" id="business_city" class="form-control" placeholder="City"> <span id="error_business_city" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Province/State&nbsp;<i class="fa fa-lock text-danger"></i></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_province_state" id="business_province_state" value="Ontario" class="form-control" placeholder="Province/State" readonly> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Postal code&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_postal_code" id="business_postal_code" class="form-control" placeholder="Postal code">
+                                                                <!--<div id="error_business_postal_code" class="text-danger"></div>--><span id="error_business_postal_code" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Country&nbsp;<i class="fa fa-lock text-danger"></i></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_country" id="business_country" value="Canada" class="form-control" placeholder="Country" readonly> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Phone&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_phone" id="business_phone" class="form-control" placeholder="Phone" onkeypress="return validateNumber(event)">
+                                                                <!--<div id="error_business_phone" class="text-danger"></div>--><span id="error_business_phone" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Fax</label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="business_fax" id="business_fax" class="form-control" placeholder="Fax"> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Email Id&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="email" name="business_email" id="business_email" class="form-control" placeholder="Email Id">
+                                                                <!--<div id="error_business_email" class="text-danger"></div>--><span id="error_business_email" class="text-danger"></span> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-center">
+                                                    <button type="button" name="previous_btn_nuans_business_detail_data" id="previous_btn_nuans_business_detail_data" class="btn theme-button btn-lg">Previous</button>
+                                                    <button type="button" name="btn_nuans_business_detail_data" id="btn_nuans_business_detail_data" class="btn theme-button btn-lg">Next</button>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nuans_business_owner_detail_data" style="opacity: 1;">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <h5 class="navy py-4">Business Owner</h5>
+                                                        <div class="row">
+                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
+                                                                <label>First Name&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_fname_one" id="owner_fname_one" class="form-control" placeholder="First Name">
+                                                                <!--<div id="error_owner_fname_one" class="text-danger"></div>--><span id="error_owner_fname_one" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
+                                                                <label>Middle Name</label>
+                                                            </div>
+                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_mname_one" class="form-control" placeholder="Middle Name"> </div>
+                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
+                                                                <label>Last Name&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_lname_one" id="owner_lname_one" class="form-control" placeholder="Last Name">
+                                                                <!--<div id="error_owner_lname_one" class="text-danger"></div>--><span id="error_owner_lname_one" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
+                                                                <label>Contact Number&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_contactno" id="owner_contactno" class="form-control" id="owner_contactno" placeholder="Contact Number" onkeypress="return validateNumber(event)">
+                                                                <!--<div id="error_cnumber_one" class="text-danger"></div>--><span id="error_owner_contactno" class="text-danger"></span> </div>
+                                                            <div class="clearfix"></div>
+                                                            <div class="form-group col-lg-4 col-sm-5 col-xs-12">
+                                                                <label>Email Id&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-8 col-sm-5 col-xs-12">
+                                                                <input type="email" name="owner_emailid" id="owner_emailid" class="form-control" id="owner_emailid" placeholder="Email Id">
+                                                                <!--<div id="error_email_one" class="text-danger"></div>--><span id="error_owner_email" class="text-danger"></span> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <h5 class="navy py-4">Owner Address</h5>
+                                                        <div class="form-check pb-4">
+                                                            <input class="form-check-input" type="checkbox" name="checkaddress" id="sameowneraddresscheckbox" value="checkold">
+                                                            <label class="form-check-label checkbox-note" for="defaultCheck1"> Same as Business address. </label>
+                                                        </div>
+                                                        <div class="row owner-address-padding">
+                                                            <div class="form-group col-lg-2 col-sm-5 col-xs-12">
+                                                                <label>Suite#</label>
+                                                            </div>
+                                                            <div class="form-group col-lg-3 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_suite_one" id="suite" class="form-control" placeholder="Suite" maxlength="6"> </div>
+                                                            <div class="col-lg-2 col-sm-5 col-xs-12">
+                                                                <label>Street#&nbsp;</label>
+                                                            </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_street_one" id="street" class="form-control" placeholder="Street" maxlength="6"> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Street Name&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_street_name_one" id="street_name" class="form-control" placeholder="Street Name">
+                                                                <!--<div id="error_owner_street_name_one" class="text-danger"></div>--><span id="error_owner_street_name_one" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>City&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_city_one" id="city" class="form-control" placeholder="City">
+                                                                <!--<div id="error_owner_city_one" class="text-danger"></div>--><span id="error_owner_city_one" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Province/State&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_province_state_one" id="province_state" class="form-control" placeholder="Province/State">
+                                                                <!--<div id="error_owner_province_state_one" class="text-danger"></div>--><span id="error_owner_province_state_one" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Postal code&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_postal_code_one" id="postal_code" class="form-control" placeholder="Postal code">
+                                                                <!--<div id="error_owner_postal_code_one" class="text-danger"></div>--><span id="error_owner_postal_code_one" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Country&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_country_one" id="country" class="form-control" placeholder="Country">
+                                                                <!--<div id="error_owner_country_one" class="text-danger"></div>--><span id="error_owner_country_one" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Phone&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_phone" id="phone" class="form-control" placeholder="Phone" onkeypress="return validateNumber(event)">
+                                                                <!--<div id="error_owner_phone" class="text-danger"></div>--><span id="error_owner_phone" class="text-danger"></span> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Fax</label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="text" name="owner_fax" id="fax" class="form-control" placeholder="Fax"> </div>
+                                                            <div class="form-group col-lg-5 col-sm-5 col-xs-12">
+                                                                <label>Email Id&nbsp;<span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="form-group col-lg-7 col-sm-5 col-xs-12">
+                                                                <input type="email" name="owner_email" id="email" class="form-control" placeholder="Email Id">
+                                                                <!--<div id="error_owner_email" class="text-danger"></div>--><span id="error_owner_email" class="text-danger"></span> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row justify-content-center">
+                                                    <button type="button" name="previous_btn_business_owner__detail_data" id="previous_btn_business_owner__detail_data" class="btn theme-button btn-lg">Previous</button>
+                                                    <button type="button" name="btn_nuans_business_owner_detail_data" id="btn_nuans_business_owner_detail_data" class="btn theme-button btn-lg">Next</button>
+                                                </div>
+                                               </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="additional_detail_data" style="opacity: 1;">
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <!--<h5 class = "navy opt-heading" id="optional_tax_head" style="display: none;">Optional Tax Registration</h5>-->
+                                                    <div class="col-lg-6">
+                                                        <h5 class="navy py-4">Additional Information</h5>
+                                                        <div class="row owner-address-padding">
+                                                            <!--                                        <div class="form-group col-md-5 col-sm-5 col-xs-12">
+                    <label>Additional Information</label>
+                    </div>-->
+                                                            <div class="form-group col-md-12 col-sm-5 col-xs-12">
+                                                                <textarea class="form-control" name="additional_info" placeholder="Additional Information" rows="5.5"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" name="checkaddress" id="sameowneraddresscheckboxx" value="checkold">
+                                                            <label class="form-check-label checkbox-note" for="defaultCheck1"> Lorem Ipsum is simply dummy text of the <a class="text-danger" href="<?php echo asset('/termsAndcondition'); ?>">Terms & Condition</a> and typesetting industry. </label>
+                                                            <div id="error_checkaddress" class="text-danger"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row justify-content-center">
+                                                    <!--                            <div class="col-lg-12">
+                                <center><button type="submit" class="button" style="vertical-align:middle"><span>Submit </span></button></center>
+                                <center><input type="submit" class="button" style="vertical-align:middle" value="Submit"></center>
+                            </div>-->
+                                                    <div>
+                                                        <button type="button" name="previous_btn_additional_detail_data" id="previous_btn_additional_detail_data" class="btn theme-button btn-lg">Previous</button>
+                                                        <button type="submit" class="btn theme-button btn-lg"><span>Submit </span></button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Registration Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>FirstInc</h3>
+              <p>
+               Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nunc sed turpis. Cras varius.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about-us.html">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Registration</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Resources</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Canada.ca</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">My Individual Account - CRA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">My Business Account - CRA</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>42 Zelda Rd, Bramption, ON,<br>
+                L6R 3v3 Canada<br><br>
+                <strong>Phone:</strong> +91 1245637890<br>
+                <strong>Email:</strong> acsjignesh@gmail.com<br>
+             </p>
+             <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>FirstInc</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed and Developed by <a href="https://intelletree.com/">Intelletree</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!--  Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/nuans.js"></script>
+</body>
+
+</html>
